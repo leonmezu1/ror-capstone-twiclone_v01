@@ -15,3 +15,14 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+
+import 'bootstrap'
+
+
+// Global Script Behavior
+$ (document).on ('turbolinks:load', function () {
+  $ ('.alert').delay (2000).fadeOut (700, function () {
+    $ ('.alert').alert ('close');
+  });
+});

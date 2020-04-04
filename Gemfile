@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise'
 
+gem 'devise-bootstrap-views'
+
 gem 'client_side_validations'
 
 gem 'client_side_validations-simple_form'
