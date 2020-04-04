@@ -19,6 +19,7 @@ require("channels")
 
 import 'bootstrap'
 import "@fortawesome/fontawesome-free/js/all";
+import '@client-side-validations/client-side-validations'
 
 
 // Global Script Behavior
