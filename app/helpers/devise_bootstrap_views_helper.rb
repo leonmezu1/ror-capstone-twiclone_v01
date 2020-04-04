@@ -12,7 +12,7 @@ module DeviseBootstrapViewsHelper
     )
 
     html = <<-HTML
-      <div class="alert alert-danger">
+      <div class="alert alert-info">
         <h4 class="alert-heading">#{sentence}</h4>
         <ul class="mb-0">#{messages}</ul>
       </div>
