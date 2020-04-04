@@ -329,7 +329,6 @@ DEPENDENCIES
   selenium-webdriver
   shoulda
   shoulda-matchers
-  simple_form
   solargraph
   spring
   spring-watcher-listen (~> 2.0.0)
