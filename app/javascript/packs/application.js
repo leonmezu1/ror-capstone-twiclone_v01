@@ -18,11 +18,23 @@ require("channels")
 
 
 import 'bootstrap'
+import "@fortawesome/fontawesome-free/js/all";
 
 
 // Global Script Behavior
+
+// alert fade
 $ (document).on ('turbolinks:load', function () {
   $ ('.alert').delay (2000).fadeOut (700, function () {
     $ ('.alert').alert ('close');
   });
+});
+
+// modal and tooltip
+$ (function () {
+  $ ('[data-toggle="tooltip"]').tooltip ();
+});
+
+$ (function () {
+  $ ('[data-toggle="popover"]').popover ();
 });
