@@ -26,15 +26,11 @@ $ (document).on ('turbolinks:load', function () {
   $ ('.alert').delay (2000).fadeOut (700, function () {
     $ ('.alert').alert ('close');
   });
-});
+  $ (function () {
+    $ ('[data-toggle="tooltip"]').tooltip ();
+  });
 
-// modal and tooltip
-$ (function () {
-  $ ('[data-toggle="tooltip"]').tooltip ();
+  $ (function () {
+    $ ('[data-toggle="popover"]').popover ();
+  });
 });
-
-$ (function () {
-  $ ('[data-toggle="popover"]').popover ();
-});
-
-// dearch button behavior
