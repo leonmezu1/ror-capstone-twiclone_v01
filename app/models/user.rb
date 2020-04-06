@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Model methods and validations
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -19,7 +20,21 @@ class User < ApplicationRecord
   has_many :followers, through: :followerships,
                        source: :follower
 
-  validates :username, presence: true, length: { minimum: 4, maximum: 20 }, uniqueness: true
+  validates :username, presence: true, length: { minimum: 4, maximum: 20 },
+                       uniqueness: true
   validates :full_name, presence: true, length: { mimium: 7, maximum: 50 }
   validates :email, presence: true, uniqueness: true
+
+  # Checks for followership
+  def follower?(user)
+    followers.include?(user)
+  end
+
+  def following?(user)
+    followed_user.include?(user)
+  end
+
+  def user_timeline
+    Chirp.where(user: [self] + friends)
+  end
 end
