@@ -293,7 +293,8 @@ main {
   display: flex;
   flex-direction: column;
 }
-.who-to-panel {
+.who-to-panel,
+.main-tl-panel {
   .banner {
     background-color: #f5f6f8;
     z-index: 4;
@@ -301,22 +302,23 @@ main {
     top: 62px;
     justify-content: space-around;
     border-bottom: 1px solid #a7b4c2;
-    color: #a7b4c2;
+    color: #a7b4c2 !important;
   }
 
   .banner-text {
     text-transform: capitalize;
+    text-decoration: none;
   }
+}
 
-  .follow-list {
-    height: calc(100vh - 122px);
-    overflow-y: auto;
-  }
+.follow-list {
+  height: calc(100vh - 132px);
+  overflow-y: auto;
 }
 
 ::-webkit-scrollbar {
   width: 8px;
-  background-color: lighten(#a7b4c2, $amount: 20);
+  background-color: lighten(#a7b4c2, $amount: 21);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -326,6 +328,26 @@ main {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
   background-color: #a7b4c2;
+}
+
+.timeline-panel {
+  padding: 0 !important;
+  .padded-link {
+    padding: 0 2.5rem;
+    color: #a7b4c2 !important;
+    font-weight: bold;
+
+    &:first-of-type{
+      &:after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 125px;
+        border-bottom: 4px solid $auxcolor;
+      }
+    }
+  }
 }
 
 /* End of home page styling */
