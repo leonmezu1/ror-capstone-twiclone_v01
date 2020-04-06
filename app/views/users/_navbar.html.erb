@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark aux-clr w-100">
+  <%= render 'users/navbarlogo' %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto d-flex justify-content-between fixed-w">
+      <li class="nav-item active">
+        <%= link_to '#', class: 'nav-link' do %>
+          <i class="fas fa-pen-fancy"></i>
+          <span class="sr-only">(current)</span>
+        <% end %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to '#', class: 'nav-link' do %>
+          <i class="fas fa-envelope"></i>
+        <% end %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to '#', class: 'nav-link' do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= link_to '#', id: 'navbarDropdown', class: 'nav-link dropdown-toggle', role: 'button', data: {toggle: 'dropdown'}, aria: { haspopup: 'true', expanded: 'false' } do %>
+          <i class="fas fa-user-cog"></i>
+        <% end %>
+        <div class="dropdown-menu dropdown-menu-right mt-3" aria-labelledby="navbarDropdown">
+          <%= link_to  "Settings", '#', class: 'dropdown-item' %>
+          <%= link_to  "Help", '#', class: 'dropdown-item' %>
+          <div class="dropdown-divider"></div>
+          <%= link_to  "Log out", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -20,11 +20,11 @@
             </div>
           <% end %>
           <div class="form-group d-flex">
-            <%= f.submit  t('.sign_in'), class: "btn outline-primary text-center login mt-2" %>
-            <%= link_to  "Sign up", new_user_registration_path, class: "btn outline-primary text-center login mt-2 ml-auto" %>
+            <%= f.submit  t('.sign_in'), class: "btn outline-primary text-center login mt-2 w-100" %>
           </div>
           <div class="form-group d-flex">
-            <%= link_to  "Forgot your password?", new_user_password_path, class: "btn outline-primary text-center login mt-2 mx-auto w-100"%>
+            <%= link_to  "Forgot your password?", new_user_password_path, class: "btn outline-primary text-center login mt-2 mr-auto"%>
+            <%= link_to  "Sign up", new_user_registration_path, class: "btn outline-primary text-center login mt-2" %>
           </div>
         <% end %>
       </div>
