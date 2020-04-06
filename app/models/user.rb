@@ -35,6 +35,6 @@ class User < ApplicationRecord
   end
 
   def user_timeline
-    Chirp.where(user: [self] + friends)
+    Chirp.where(user: [self] + followed_users)
   end
 end

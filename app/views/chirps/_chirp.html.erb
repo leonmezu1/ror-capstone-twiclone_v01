@@ -1,0 +1,25 @@
+<li class="chirp-container mb-2">
+  <div class="content-wrapper shadow">
+    <div class="row">
+      <div class="col-lg-12 d-flex flex-column">
+        <%= link_to "#{ symbol_nick chirp.user } #{ chirp.user.full_name }", user_path(chirp.user), class: 'user-title mr-auto' %>
+        <p class="chirp-content">
+          <%= chirp.content %>
+        </p>
+        <div class='chirp-comments-section'>
+          <% chirp.comments.each do |comment| %>
+            <div class="chirp-comments">
+              <p>
+                <b><%= comment.user.username %>:</b> <%= comment.content %>
+              </p>
+            </div>
+          <% end %>
+          <%= form_for(chirp.comments.new, url: chirp_comments_path(chirp)) do |form| %>
+            <%= form.text_field :content, id: :comment_content, class: 'form-control', placeholder: 'Add new comment' %>
+            <%= form.submit 'Comment', class: 'btn btn-sm custom-btn mt-3' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>

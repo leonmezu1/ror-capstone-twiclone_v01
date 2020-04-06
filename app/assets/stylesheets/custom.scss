@@ -132,12 +132,8 @@ main {
 .form-warning {
   color: lighten($font-main, $amount: 15) !important;
   opacity: 0.6;
-  text-transform: lowercase;
+  text-transform: none;
   font-size: 0.9rem;
-}
-
-.form-control::placeholder::first-letter {
-  text-transform: uppercase;
 }
 
 .form-warning {
@@ -311,7 +307,8 @@ main {
   }
 }
 
-.follow-list {
+.follow-list,
+.chirp-list-panel {
   height: calc(100vh - 132px);
   overflow-y: auto;
 }
@@ -347,6 +344,30 @@ main {
         border-bottom: 4px solid $auxcolor;
       }
     }
+  }
+}
+
+.main-tl-panel {
+  background-color: #f5f6f8;
+}
+
+.content-wrapper {
+  background-color: #fff;
+  padding: 0.625rem;
+  border-radius: 0.625rem;
+  -webkit-border-radius: 0.625rem;
+  -moz-border-radius: 0.625rem;
+  -ms-border-radius: 0.625rem;
+  -o-border-radius: 0.625rem;
+
+  .chirp-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chirp-title {
+    color: #a7b4c2 !important;
+    font-weight: 400;
   }
 }
 

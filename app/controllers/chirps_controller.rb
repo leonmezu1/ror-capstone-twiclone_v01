@@ -3,7 +3,6 @@
 # Controller
 class ChirpsController < ApplicationController
   def index
-    @chirp = Chirp.new
     timeline_chirps
   end
 
@@ -13,8 +12,7 @@ class ChirpsController < ApplicationController
     if @post.save
       redirect_to chirps_path, notice: 'Chirp sent'
     else
-      timeline_chirps
-      render :index, alert: 'Oops! something went wrong'
+      redirect_to chirps_path, alert: 'Oops! something went wrong'
     end
   end
 
@@ -24,7 +22,7 @@ class ChirpsController < ApplicationController
     @timeline_chirps ||= current_user.user_timeline
   end
 
-  def post_params
+  def chirp_params
     params.require(:chirp).permit(:content)
   end
 end
