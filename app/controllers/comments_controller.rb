@@ -20,7 +20,8 @@ class CommentsController < ApplicationController
       Comment.find(params[:id]).destroy
       redirect_back(fallback_location: root_path, alert: 'Comment deleted')
     else
-      redirect_back(fallback_location: root_path, alert: 'Oops! something went wrong')
+      redirect_back(fallback_location: root_path,
+                    alert: 'Oops! something went wrong')
     end
   end
 

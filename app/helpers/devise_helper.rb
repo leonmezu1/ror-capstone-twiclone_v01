@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
+# Devise
 module DeviseHelper
-  # Retain this method for backwards compatibility, deprecated in favour of modifying the
+  # Retain this method for backwards compatibility, deprecated in favour of
+  # modifying the
   # devise/shared/error_messages partial
   def devise_error_messages!
     ActiveSupport::Deprecation.warn <<-DEPRECATION.strip_heredoc

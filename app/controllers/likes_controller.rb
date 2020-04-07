@@ -14,6 +14,7 @@ class LikesController < ApplicationController
     end
   end
 
+  # rubocop: disable Metrics/MethodLength
   def destroy
     like = Like.find_by(id: params[:id], user: current_user,
                         chirp_id: params[:chirp_id])
@@ -27,4 +28,5 @@ class LikesController < ApplicationController
                             not like before.')
     end
   end
+  # rubocop: enable Metrics/MethodLength
 end

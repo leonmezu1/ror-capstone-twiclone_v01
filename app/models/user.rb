@@ -14,7 +14,8 @@ class User < ApplicationRecord
   has_many :followerships, class_name: 'Following', foreign_key: :user_id,
                            dependent: :delete_all
   has_many :inverse_followerships, class_name: 'Following',
-                                   foreign_key: :follower_id, dependent: :delete_all
+                                   foreign_key: :follower_id,
+                                   dependent: :delete_all
   has_many :followed_users, through: :inverse_followerships,
                             source: :user
   has_many :followers, through: :followerships,

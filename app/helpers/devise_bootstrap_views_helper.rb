@@ -1,10 +1,17 @@
 # frozen_string_literal: true
 
+# Useful
+
+# rubocop: disable Metrics/MethodLength
+# rubocop: disable Metrics/AbcSize
 module DeviseBootstrapViewsHelper
   def bootstrap_devise_error_messages!
     return '' if resource.errors.empty?
 
-    messages = resource.errors.full_messages.map { |message| content_tag(:li, message) }.join
+    messages = resource.errors.full_messages.map do |message|
+      content_tag(:li, message)
+    end
+    messages.join
     sentence = I18n.t(
       'errors.messages.not_saved',
       count: resource.errors.count,
@@ -21,3 +28,5 @@ module DeviseBootstrapViewsHelper
     html.html_safe
   end
 end
+# rubocop: enable Metrics/MethodLength
+# rubocop: enable Metrics/AbcSize

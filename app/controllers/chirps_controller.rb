@@ -21,7 +21,8 @@ class ChirpsController < ApplicationController
       Chirp.find(params[:id]).destroy
       redirect_back(fallback_location: root_path, alert: 'Chirp deleted')
     else
-      redirect_back(fallback_location: root_path, alert: 'Oops! something went wrong')
+      redirect_back(fallback_location: root_path,
+                    alert: 'Oops! something went wrong')
     end
   end
 

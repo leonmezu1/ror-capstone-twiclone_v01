@@ -7,10 +7,10 @@ module CommentsHelper
   end
 
   def comment_trash(comment)
-    if current_user.id == comment.user.id
-      link_to(uncomment_path(comment, id: comment.id), method: :delete) do
-        content_tag(:i, '', class: 'far fa-trash-alt').html_safe
-      end
+    return unless current_user.id == comment.user.id
+
+    link_to(uncomment_path(comment, id: comment.id), method: :delete) do
+      content_tag(:i, '', class: 'far fa-trash-alt').html_safe
     end
   end
 end
