@@ -10,7 +10,7 @@ module LikesHelper
             class: 'btn btn-sm outline-primary mt-3', method: :delete) do
       content_tag(:i, '', class: 'fas fa-heart-broken').html_safe
     end
-  rescue StandardError => e
+  rescue StandardError
     link_to(chirp_likes_path(chirp_id: chirp.id),
             class: 'btn btn-sm outline-primary mt-3', method: :post) do
       content_tag(:i, '', class: 'fas fa-heart').html_safe
