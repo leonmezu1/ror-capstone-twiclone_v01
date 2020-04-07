@@ -16,6 +16,15 @@ class ChirpsController < ApplicationController
     end
   end
 
+  def destroy
+    if params[:id]
+      Chirp.find(params[:id]).destroy
+      redirect_back(fallback_location: root_path, alert: 'Chirp deleted')
+    else
+      redirect_back(fallback_location: root_path, alert: 'Oops! something went wrong')
+    end
+  end
+
   private
 
   def timeline_chirps
@@ -23,6 +32,6 @@ class ChirpsController < ApplicationController
   end
 
   def chirp_params
-    params.require(:chirp).permit(:content)
+    params.require(:chirp).permit(:content, :id)
   end
 end

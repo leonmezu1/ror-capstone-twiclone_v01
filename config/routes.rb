@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   get 'users/show'
   devise_for :users
   resources :chirps
+  delete '/comments', to: 'comments#destroy', as: 'uncomment'
+  delete '/chirps', to: 'chirps#destroy', as: 'deletechirp'
 
-  resources :users  do
+  resources :users do
     resources :followings
   end
   resources :chirps do

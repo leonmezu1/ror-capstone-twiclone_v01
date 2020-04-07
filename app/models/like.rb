@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
+# Like model
 class Like < ApplicationRecord
   belongs_to :user
   belongs_to :chirp
 
-  validates :user_id, uniqueness: { scope: :opinion_id }
+  validates :user_id, uniqueness: { scope: :chirp_id }
 end

@@ -2,5 +2,5 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Chirps', type: :request do
+RSpec.describe 'Comments', type: :request do
 end
