@@ -2,7 +2,6 @@
 
 # Like helper
 module LikesHelper
-  # rubocop: disable Lint/UselessAssignment:
   def like_or_dislike_btn(chirp)
     like = Like.find_by(chirp: chirp, user: current_user)
 
@@ -16,7 +15,6 @@ module LikesHelper
       content_tag(:i, '', class: 'fas fa-heart').html_safe
     end
   end
-  # rubocop: enable Lint/UselessAssignment:
 
   def likes_count(chirp)
     "#{chirp.likes.count} #{'like'.pluralize(chirp.likes.count)}"
