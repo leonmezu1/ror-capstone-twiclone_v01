@@ -470,4 +470,19 @@ main {
   height: calc(100vh - 455px);
   overflow-y: auto;
 }
+
+.static-background {
+  background-image: url(feature.jpg);
+  background-size: cover;
+}
+
+.feature-content {
+  height: 100vh;
+  width: 100vw;
+}
+
+.fancy {
+  font-style: italic;
+  color: #fff;
+}
 /* End of home page styling */
