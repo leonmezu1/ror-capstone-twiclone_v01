@@ -231,7 +231,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid darken($maincolor, $amount: 2);
+    // border: 1px solid darken($maincolor, $amount: 2);
     color: #a7b4c2;
     width: 45%;
     &:hover {
@@ -442,6 +442,12 @@ main {
   top: 68.3px;
 }
 
+.bio-text {
+  font-style: italic;
+  color: #a7b4c2;
+  text-align: center;
+}
+
 .follow-banner {
   background-color: #f5f6f8;
   justify-content: space-around;
@@ -467,7 +473,7 @@ main {
 }
 
 .user-follow-list {
-  height: calc(100vh - 455px);
+  height: calc(100vh - 510px);
   overflow-y: auto;
 }
 
