@@ -4,6 +4,8 @@
 module FollowingsHelper
   # rubocop: disable Metrics/MethodLength
   def follow_btn(user, cls = nil)
+    return unless current_user != user
+
     if current_user.following?(user)
       link_to(unfollow_path(user_id: user.id),
               class: 'follow-btn', method: :delete) do

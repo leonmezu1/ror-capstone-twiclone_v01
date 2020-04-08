@@ -14,8 +14,9 @@
 
 require 'faker'
 
-1.upto(15) do |i|
-  user = User.new(username: Faker::Internet.username, full_name: Faker::Name.name,
+1.upto(30) do |i|
+  user = User.new(username: Faker::Internet.username,
+                  full_name: Faker::Name.name,
                   email: "test#{i}@test.com",
                   password: '123456', password_confirmation: '123456').save
   redo unless user
