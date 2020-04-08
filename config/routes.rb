@@ -2,10 +2,10 @@
 
 Rails.application.routes.draw do
   get 'static/feature'
+  get 'static/next', as: 'next'
   root to: 'chirps#index'
-  get 'users/show'
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations' }
   resources :chirps
 
   post 'followings/create', to: 'followings#create', as: 'follow'

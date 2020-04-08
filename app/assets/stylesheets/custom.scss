@@ -294,7 +294,8 @@ main {
   flex-grow: 1;
 }
 .who-to-panel,
-.main-tl-panel {
+.main-tl-panel,
+.user-mn-tl-panel {
   .banner {
     background-color: #f5f6f8;
     z-index: 4;
@@ -317,6 +318,12 @@ main {
   overflow-y: auto;
 }
 
+.user-mn-tl-panel {
+  height: calc(100vh - 68.3px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   background-color: lighten(#a7b4c2, $amount: 21);
@@ -328,7 +335,7 @@ main {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  background-color: #a7b4c2;
+  background-color: lighten(#a7b4c2, $amount: 16);
 }
 
 .timeline-panel {
@@ -351,7 +358,8 @@ main {
   }
 }
 
-.main-tl-panel {
+.main-tl-panel,
+.user-mn-tl-panel {
   background-color: #f5f6f8;
 }
 
@@ -436,10 +444,11 @@ main {
 }
 
 .info-wrapper {
+  background-color: #f5f6f8;
   border-bottom: 1px solid #a7b4c2;
-  z-index: 8;
   position: sticky;
   top: 68.3px;
+  min-height: 435px;
 }
 
 .bio-text {
@@ -475,6 +484,7 @@ main {
 .user-follow-list {
   height: calc(100vh - 510px);
   overflow-y: auto;
+  z-index: 1 !important;
 }
 
 .static-background {
@@ -498,4 +508,15 @@ main {
   height: 150px;
   width: 150px;
 }
+
+.cover-frame {
+  box-sizing: border-box;
+  height: 307px;
+  img {
+    object-fit: cover;
+    overflow: hidden;
+  }
+}
 /* End of home page styling */
+
+

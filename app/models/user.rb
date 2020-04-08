@@ -27,6 +27,7 @@ class User < ApplicationRecord
                        uniqueness: true
   validates :username, format: { with: /\A[a-zA-Z0-9]+\Z/ }
   validates :full_name, presence: true, length: { minimum: 7, maximum: 50 }
+  validates :bio, length: { maximum: 78 }
   validates :email, presence: true, uniqueness: true
 
   scope :all_but, ->(user) { where.not(id: user) }

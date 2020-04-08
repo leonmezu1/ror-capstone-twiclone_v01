@@ -11,9 +11,10 @@ class ChirpsController < ApplicationController
     @post = current_user.chirps.new(chirp_params)
 
     if @post.save
-      redirect_to chirps_path, notice: 'Chirp sent'
+      redirect_back(fallback_location: root_path, notice: 'Chirp sent')
     else
-      redirect_to chirps_path, alert: 'Oops! something went wrong'
+      redirect_back(fallback_location: root_path, alert: 'Oops! something went
+                                                          wrong')
     end
   end
 

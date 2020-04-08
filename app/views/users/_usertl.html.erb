@@ -1,10 +1,15 @@
-<div class="main-tl-panel">
-  <div class="banner d-flex justify-content-start py-3">
-    <%= link_to 'Tweets', root_path, class: "banner-text padded-link"%>
-    <%= link_to 'Photos', '#', class: "banner-text padded-link"%>
-    <%= link_to 'Videos', '#', class: "banner-text padded-link"%>
+<div class="user-mn-tl-panel">
+  <div class="shrinking">
+    <div class="d-block cover-frame">
+      <%= cover_for(@user, 1920, 350) %>
+    </div>
+    <div class="banner d-flex justify-content-start py-3">
+      <%= link_to 'Tweets', root_path, class: "banner-text padded-link"%>
+      <%= link_to 'Photos', '#', class: "banner-text padded-link"%>
+      <%= link_to 'Videos', '#', class: "banner-text padded-link"%>
+    </div>
   </div>
-  <div class="row chirp-list-panel d-flex flex-column align-items-center">
+  <div class="row d-flex flex-column align-items-center">
     <div class="col-11">
       <div class="content-wrapper shadow my-4">
         <div class="chirp-container">

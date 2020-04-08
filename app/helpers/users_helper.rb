@@ -6,17 +6,17 @@ module UsersHelper
   # rubocop: disable Metrics/MethodLength
   def gravatar_for(user, size = 80, cls = nil)
     if user.avatar.attached?
-      formated = user.avatar.variant(resize_to_limit: [size, size])
+      formated = user.avatar.variant(resize: "#{size}x#{size}")
       link_to(user_path(user)) do
         image_tag(formated, alt: user.username, class: "gravatar rounded-lg
-          img-thumbnail #{cls}")
+         #{cls}")
       end
     else
       gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
       grav_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
       link_to(user_path(user)) do
         image_tag(grav_url, alt: user.username, class: "gravatar rounded-lg
-          img-thumbnail #{cls}")
+         #{cls}")
       end
     end
   end
@@ -35,6 +35,15 @@ module UsersHelper
         image_tag(grav_url, alt: user.username, class: "gravatar rounded-circle
                                                         #{cls}")
       end
+    end
+  end
+
+  def cover_for(user, sizex, sizey)
+    if user.cover.attached?
+      cover_img = user.cover.variant(resize: "#{sizex}x#{sizey}")
+      image_tag(cover_img, alt: 'cover image', class: 'cover-me')
+    else
+      image_tag('https://picsum.photos/1000/300/?blur=2', alt: 'cover image')
     end
   end
   # rubocop: enable Metrics/AbcSize

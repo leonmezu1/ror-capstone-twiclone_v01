@@ -18,7 +18,8 @@ require 'faker'
   user = User.new(username: Faker::Internet.username,
                   full_name: Faker::Name.name,
                   email: "test#{i}@test.com",
-                  password: '123456', password_confirmation: '123456').save
+                  password: '123456', password_confirmation: '123456',
+                  bio: Faker::Quote.most_interesting_man_in_the_world).save
   redo unless user
 end
 

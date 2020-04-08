@@ -12,9 +12,7 @@
       <%= fullname_link @user %>
     </div>
     <div class="bio">
-        <p class="bio-text">
-            this is a bio test, discription shuold not have more than this hey hey hey hey
-        <p>
+        <p class="bio-text"><%= @user.bio %><p>
     </div>
     <div class="d-flex user-tile-stats w-100 mb-1">
       <div class="u_view_chirps">
@@ -30,7 +28,7 @@
         <span class="f_data">Following</span>
       </div>
     </div>
-    <div class="follow-banner d-inline-flex py-3 w-100">
+    <div class="follow-banner d-inline-flex py-3 mt-auto w-100">
         <span class="banner-text" > Followed by </span>
         <i class="fas fa-users"></i>
     </div>
