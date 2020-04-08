@@ -4,6 +4,7 @@
 class ChirpsController < ApplicationController
   def index
     timeline_chirps
+    @suggested_users = current_user.follow_suggest
   end
 
   def create

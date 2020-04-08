@@ -8,11 +8,11 @@
     <div class="col-11">
       <div class="content-wrapper shadow my-4">
         <div class="chirp-container">
-          <span class="chirp-title my-2 ml-3">Chirp something!</span>
+          <span class="chirp-title my-2 ml-3"><%="Chirp to #{ symbol_nick(@user) }" %></span>
           <%= form_for Chirp.new do |f| %>
             <div class="form-row d-flex justify-content-center">
               <div class="form-group ml-3 w-80">
-                <%= f.text_field :content, class: 'form-control', placeholder: "What's going on?" %>
+                <%= f.text_field :content, class: 'form-control', placeholder: "What's going on?", value: "#{ symbol_nick(@user) }" %>
               </div>
               <div class="form-group mx-3">
                 <%= f.submit 'Chirp it!', class: 'btn outline-primary' %>
@@ -22,7 +22,7 @@
         </div>
       </div>
       <ul class="chirps-tl d-flex flex-column list-unstyled w-100">
-        <%= render @timeline_chirps %>
+        <%= render @user.chirps %>
       </ul>
     </div>
   </div>

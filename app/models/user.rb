@@ -23,19 +23,29 @@ class User < ApplicationRecord
 
   validates :username, presence: true, length: { minimum: 4, maximum: 20 },
                        uniqueness: true
-  validates :full_name, presence: true, length: { mimium: 7, maximum: 50 }
+  validates :username, format: { with: /\A[a-zA-Z0-9]+\Z/ }
+  validates :full_name, presence: true, length: { minimum: 7, maximum: 50 }
   validates :email, presence: true, uniqueness: true
+
+  scope :all_but, ->(user) { where.not(id: user) }
+
+  # thows a list of users to follow
+  def follow_suggest
+    User.all_but(self).map { |usr| usr unless following?(usr) }.compact
+  end
 
   # Checks for followership
   def follower?(user)
     followers.include?(user)
   end
 
+  # Checks for followership
   def following?(user)
-    followed_user.include?(user)
+    followed_users.include?(user)
   end
 
+  # return chirps
   def user_timeline
-    Chirp.where(user: [self] + followed_users).most_recents
+    Chirp.includes(:user).where(user: [self] + followed_users).most_recents
   end
 end

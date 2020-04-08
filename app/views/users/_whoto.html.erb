@@ -12,9 +12,9 @@
         <div class="avatar mx-2">
           <%= gravatar_circled_for(user, 55) %>
         </div>
-        <div class="username-links-light d-flex flex-column">
-          <%= username_link user %>
-          <%= fullname_link user %>
+        <div class="user-nicks">
+          <div class="f_name"><%= user.full_name %></div>
+          <div class="u_name"><%= symbol_nick user%></div>
         </div>
         <div class="ml-auto mr-3"><%= follow_btn user %></div>
       </div>

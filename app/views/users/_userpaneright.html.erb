@@ -1,0 +1,47 @@
+<div class="show-user-pane">
+  <div class="info-wrapper d-flex flex-column">
+    <div class="avatar-view d-flex justify-content-center align-items-center my-4">
+      <%= follow_btn(@user, 'circled-link mt-1 mr-2') %>
+      <%= gravatar_circled_for(@user, 145, 'mx-3') %>
+      <%= link_to '#', class: "circled-link ml-2" do %>
+        <i class="fas fa-list-ul"></i>
+      <% end %>
+    </div>
+    <div class="username-links-light d-flex flex-column align-items-center mb-2">
+      <%= username_link @user %>
+      <%= fullname_link @user %>
+    </div>
+    <div class="d-flex user-tile-stats w-100 mb-1">
+      <div class="u_view_chirps">
+        <span class="font-weight-bold"> <%= @user.chirps.count %> </span>
+        <span class="f_data">Chirps</span>
+      </div>
+      <div class="u_view_followers">
+        <span class="font-weight-bold" > <%= @user.followers.count %> </span>
+        <span class="f_data">Followers</span>
+      </div>
+      <div class="u_view_followwing_count">
+        <span class="font-weight-bold"> <%= @user.followed_users.count %> </span>
+        <span class="f_data">Following</span>
+      </div>
+    </div>
+    <div class="follow-banner d-inline-flex py-3 w-100">
+        <span class="banner-text" > Followed by </span>
+        <i class="fas fa-users"></i>
+    </div>
+  </div>
+  <div class="user-follow-list">
+    <% @user.followers.each do |user| %>
+      <div class="d-flex user-tile w-100 align-items-center py-4">
+        <div class="avatar mx-2">
+          <%= gravatar_circled_for(user, 55) %>
+        </div>
+        <div class="username-links-light d-flex flex-column">
+          <%= username_link user %>
+          <%= fullname_link user %>
+        </div>
+        <div class="ml-auto mr-3"><%= follow_btn user %></div>
+      </div>
+    <% end %>
+  </div>
+</div>

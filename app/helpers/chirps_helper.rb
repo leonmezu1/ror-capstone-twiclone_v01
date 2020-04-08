@@ -11,7 +11,7 @@ module ChirpsHelper
     return unless current_user.id == chirp.user.id
 
     link_to(deletechirp_path(chirp, id: chirp.id),
-            class: 'btn btn-sm outline-primary mt-3',
+            class: 'btn btn-sm outline-primary',
             data: { confirm: 'Are you sure?' }, method: :delete) do
       concat(content_tag(:span, 'Delete chirp').html_safe + '' +
               content_tag(:i, '', class: 'ml-2 far fa-trash-alt').html_safe)

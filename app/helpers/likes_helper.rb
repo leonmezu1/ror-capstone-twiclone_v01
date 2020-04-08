@@ -6,12 +6,12 @@ module LikesHelper
     like = Like.find_by(chirp: chirp, user: current_user)
 
     link_to(chirp_like_path(id: like.id, chirp_id: chirp.id),
-            class: 'btn btn-sm outline-primary mt-3', method: :delete) do
+            class: 'btn btn-sm outline-primary mt-2 ml-2', method: :delete) do
       content_tag(:i, '', class: 'fas fa-heart-broken').html_safe
     end
   rescue StandardError
     link_to(chirp_likes_path(chirp_id: chirp.id),
-            class: 'btn btn-sm outline-primary mt-3', method: :post) do
+            class: 'btn btn-sm outline-primary mt-2 ml-2', method: :post) do
       content_tag(:i, '', class: 'fas fa-heart').html_safe
     end
   end
