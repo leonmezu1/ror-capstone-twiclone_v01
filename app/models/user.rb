@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_many :likes
   has_many :chirps
   has_many :comments
+  has_one_attached :avatar
+  has_one_attached :cover
 
   has_many :followerships, class_name: 'Following', foreign_key: :user_id,
                            dependent: :delete_all
