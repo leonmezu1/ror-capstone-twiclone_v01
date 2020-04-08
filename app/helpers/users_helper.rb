@@ -9,14 +9,14 @@ module UsersHelper
       formated = user.avatar.variant(resize_to_limit: [size, size])
       link_to(user_path(user)) do
         image_tag(formated, alt: user.username, class: "gravatar rounded-lg
-                                                        #{cls}")
+          img-thumbnail #{cls}")
       end
     else
       gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
       grav_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
       link_to(user_path(user)) do
         image_tag(grav_url, alt: user.username, class: "gravatar rounded-lg
-                                                        #{cls}")
+          img-thumbnail #{cls}")
       end
     end
   end
