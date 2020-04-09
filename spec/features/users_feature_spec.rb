@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+# rubocop: disable Metrics/BlockLength
 RSpec.describe 'Users', type: :request do
   include Integration
   describe 'GET /index' do
@@ -69,3 +70,4 @@ feature 'User' do
     end
   end
 end
+# rubocop: enable Metrics/BlockLength
