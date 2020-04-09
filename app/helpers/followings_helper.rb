@@ -6,12 +6,12 @@ module FollowingsHelper
     if current_user.following?(user)
       link_to(unfollow_path(user_id: user.id),
               class: 'follow-btn', method: :delete) do
-        content_tag(:i, '', class: "fas fa-minus-circle #{cls}").html_safe
+        content_tag(:i, '', class: "fas fa-minus-circle #{cls} follow_test_btn").html_safe
       end
     else
       link_to(follow_path(user_id: user.id),
               class: 'follow-btn', method: :post) do
-        content_tag(:i, '', class: "fas fa-plus-circle #{cls}").html_safe
+        content_tag(:i, '', class: "fas fa-plus-circle #{cls} unfollow_test_btn").html_safe
       end
     end
   end

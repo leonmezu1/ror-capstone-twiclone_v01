@@ -21,8 +21,8 @@
               </div>
             </div>
           <% end %>
-          <%= form_for(chirp.comments.new, url: chirp_comments_path(chirp)) do |form| %>
-            <%= form.text_field :content, id: :comment_content, class: 'form-control', placeholder: 'Add new comment' %>
+          <%= form_for(chirp.comments.new, url: chirp_comments_path(chirp), html: { id: 'chirp-comment-form' }) do |form| %>
+            <%= form.text_field :content, id: 'comment-content', class: 'form-control', placeholder: 'Add new comment' %>
             <div class="bottom-row w-100">
               <%= form.submit 'Comment', class: 'btn btn-sm outline-primary mt-2 mr-auto' %>
               <div class = "like-btn">

@@ -6,10 +6,10 @@
         <%= form_for resource, as: resource_name, url: session_path(resource_name), html: { class: "floating-f white-bg mx-auto my-auto shadowed-box"} do |f| %>
           <%= render 'devise/registrations/logosvg' %>
           <div class="form-group">
-            <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control', placeholder: "email" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control', placeholder: "email", id: 'email' %>
           </div>
           <div class="form-group">
-            <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control', placeholder: "password" %>
+            <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control', placeholder: "password", id: 'password' %>
           </div>
           <% if devise_mapping.rememberable? %>
             <div class="form-group form-check">
