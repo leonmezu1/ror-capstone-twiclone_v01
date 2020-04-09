@@ -1,7 +1,7 @@
 require 'rails_helper'
-include Integration
 
 feature 'Chirp' do
+  include Integration
   context 'Create chirps' do
     before(:each) do
       visit '/users/sign_up'

@@ -1,8 +1,7 @@
 require 'rails_helper'
-include Integration
-
 
 RSpec.describe 'Users', type: :request do
+  include Integration
   describe 'GET /index' do
     it 'returns http redirection if not logged in' do
       get '/users/index'
@@ -17,7 +16,6 @@ RSpec.describe 'Users', type: :request do
     end
   end
 end
-
 feature 'User' do
   context 'Sign up' do
     before(:each) do
