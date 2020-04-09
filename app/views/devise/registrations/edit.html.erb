@@ -1,56 +1,68 @@
 <h1 class="static-title">Edit my account</h1>
 <div class="container">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'floating-f white-bg mx-auto my-auto shadowed-box'}, validate: true) do |f| %>
-    <div class="form-group">
-
-      <div class="row d-flex align-items-center justify-content-center">
-        <div class="col-lg-10 offset-lg-1">
-          <%= gravatar_circled_for(resource, 100, "img-thumbnail mr-5") %>
-          <%= f.file_field :avatar, direct_upload: true %>
+    <div class="form-row">
+      <div class="form-group">
+        <div class="d-flex">
+          <%= gravatar_circled_for(resource, 100, "img-thumbnail mr-2") %>
+          <div class="d-flex flex-column">
+            <%= f.label :avatar, class: "text-left" %>
+            <%= f.file_field :avatar, direct_upload: true %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="d-flex">
+          <div clas="fit-small">
+            <%= cover_for(resource, 100, 99, "img-thumbnail mr-4") %>
+          </div>
+          <div class="d-flex flex-column">
+            <%= f.label :cover, class: "text-left" %>
+            <%= f.file_field :cover, direct_upload: true%>
+          </div>
         </div>
       </div>
     </div>
-
     <div class="form-row">
       <div class="form-group col-lg-4">
         <%= f.label :username %><br />
         <%= f.text_field :username, autofocus: true, autocomplete: "name", class: 'form-control' %>
       </div>
-
       <div class="form-group col-lg-4">
         <%= f.label :full_name %><br />
         <%= f.text_field :full_name, autofocus: true, autocomplete: "name", class: 'form-control' %>
       </div>
-
+      <div class="form-group col-lg-4">
+        <%= f.label :full_name %><br />
+        <%= f.text_field :full_name, autofocus: true, autocomplete: "name", class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-lg-4">
+        <%= f.label :bio %><br />
+        <%= f.text_field :bio, autofocus: true, autocomplete: "name", class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-row">
       <div class="form-group col-lg-4">
         <%= f.label :email %>
         <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
       </div>
-    </div>
-
-    <div class="form-row">
-      <div class="form-group col-lg-6">
+      <div class="form-group col-lg-4">
         <%= f.label :password %>
         <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control' %>
-
         <small class="form-text text-muted"><%= t('.leave_blank_if_you_don_t_want_to_change_it') %></small>
       </div>
-
-      <div class="form-group col-lg-6">
+      <div class="form-group col-lg-4">
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control'  %>
       </div>
     </div>
-
-
-
     <div class="form-group">
       <%= f.label :current_password %>
       <%= f.password_field :current_password, autocomplete: 'current-password', class: 'form-control' %>
-
       <small class="form-text text-muted"><%= t('.we_need_your_current_password_to_confirm_your_changes') %></small>
     </div>
-
     <div class="form-group d-flex">
       <%= f.submit t('.update'), class: 'btn btn-sm btn-primary' %>
       <p class="ml-auto"><%= 'Unhappy?' %> <%= link_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete %> <%= link_to t('.back'), :back %>.</p>

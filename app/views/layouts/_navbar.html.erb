@@ -27,8 +27,8 @@
           <i class="fas fa-user-cog"></i>
         <% end %>
         <div class="dropdown-menu dropdown-menu-right mt-3" aria-labelledby="navbarDropdown">
-          <%= link_to  "Settings", edit_user_registration_path, class: 'dropdown-item' %>
-          <%= link_to  "Help", '#', class: 'dropdown-item' %>
+          <%= link_to  "Edit my account", edit_user_registration_path, class: 'dropdown-item' %>
+          <%= link_to  "Help", help_path, class: 'dropdown-item' %>
           <div class="dropdown-divider"></div>
           <%= link_to  "Log out", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
         </div>

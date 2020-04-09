@@ -1,11 +1,11 @@
 <h1 class="static-title">Almost ready!</h1>
 <div class="container">
   <%= form_for(current_user, as: current_user, url: registration_path(current_user), html: { method: :put, class: 'floating-f white-bg mx-auto my-auto shadowed-box w-50' }, validate: true) do |f| %>
-    <p class="text-center my-4 font-italic">One step more! what about an avatar, cover pics and a bio?</p>
+    <p class="text-center my-4 font-italic">One more step, what about an avatar, cover pics and a bio?</p>
     <div class="form-group">
       <div class="d-flex align-items-center justify-content-around">
         <div class="d-block">
-            <%= gravatar_circled_for(current_user, 100) %>
+          <%= gravatar_circled_for(current_user, 100) %>
         </div>
         <div class="d-flex flex-column">
           <%= f.label :avatar, class: "text-left ml-4" %>
@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="form-group">
-     <p class="text-center my-4 font-italic">By the fault a ramdom cover picture is placed, still better be you right?</p>
+      <p class="text-center my-4 font-italic">By default a random cover picture is placed, still better be you right?</p>
       <div class="d-flex align-items-center justify-content-around">
         <div class="d-block">
           <img class="img-fluid rounded-lg" src="https://picsum.photos/100?blur=2">
@@ -28,7 +28,7 @@
       </div>
     </div>
     <div class="form-group">
-     <p class="text-center my-4 font-italic">A nice and short bio would be great for a first impression ain't it?</p>
+      <p class="text-center my-4 font-italic">A nice and short bio would be great for a first impression ain't it?</p>
       <div class="d-flex align-items-center justify-content-around">
         <div class="d-flex flex-column">
           <%= f.label :bio, class: "text-left ml-4" %>
@@ -36,14 +36,11 @@
         </div>
       </div>
     </div>
-
     <div class="form-group">
       <%= f.label :current_password %>
       <%= f.password_field :current_password, autocomplete: 'current-password', class: 'form-control' %>
-
       <small class="form-text text-muted"><%= t('.we_need_your_current_password_to_confirm_your_changes') %></small>
     </div>
-
     <div class="form-group d-flex">
       <%= f.submit 'Continue', class: 'btn btn-sm btn-primary' %>
       <p class="ml-auto"> <%= link_to t('Skip'), root_path %></p>

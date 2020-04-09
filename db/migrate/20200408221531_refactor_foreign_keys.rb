@@ -11,6 +11,3 @@ class RefactorForeignKeys < ActiveRecord::Migration[6.0]
     add_foreign_key :chirps, :users, on_delete: :cascade
   end
 end
-
-
-

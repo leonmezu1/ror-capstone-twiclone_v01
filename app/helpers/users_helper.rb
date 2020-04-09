@@ -6,7 +6,7 @@ module UsersHelper
   # rubocop: disable Metrics/MethodLength
   def gravatar_for(user, size = 80, cls = nil)
     if user.avatar.attached?
-      formated = user.avatar.variant(resize: "#{size}x#{size}")
+      formated = user.avatar.variant(resize: "#{size}x#{size}!")
       link_to(user_path(user)) do
         image_tag(formated, alt: user.username, class: "gravatar rounded-lg
          #{cls}")
@@ -23,7 +23,7 @@ module UsersHelper
 
   def gravatar_circled_for(user, size = 80, cls = nil)
     if user.avatar.attached?
-      formated = user.avatar.variant(resize_to_limit: [size, size])
+      formated = user.avatar.variant(resize: "#{size}x#{size}!")
       link_to(user_path(user)) do
         image_tag(formated, alt: user.username, class: "gravatar rounded-circle
                                                         #{cls}")
@@ -38,12 +38,13 @@ module UsersHelper
     end
   end
 
-  def cover_for(user, sizex, sizey)
+  def cover_for(user, sizex = 100, sizey = 100, cls = nil)
     if user.cover.attached?
-      cover_img = user.cover.variant(resize: "#{sizex}x#{sizey}")
-      image_tag(cover_img, alt: 'cover image', class: 'cover-me')
+      cover_img = user.cover.variant(resize: "#{sizex}x#{sizey}!")
+      image_tag(cover_img, alt: 'cover image', class: "cover-me #{cls}")
     else
-      image_tag('https://picsum.photos/1000/300/?blur=2', alt: 'cover image')
+      image_tag("https://picsum.photos/#{sizex}/#{sizey}/",
+                alt: 'cover_image', class: cls.to_s)
     end
   end
   # rubocop: enable Metrics/AbcSize

@@ -194,7 +194,7 @@ main {
 }
 /* End login pages styling */
 
-/* Start of home page styling */
+/* Start of page styling */
 
 .navbar {
   z-index: 10;
@@ -402,7 +402,7 @@ main {
   display: flex;
   align-items: center;
   .likes-count {
-    color: darken($color: #a7b4c2, $amount: 15);;
+    color: darken($color: #a7b4c2, $amount: 15);
   }
 }
 
@@ -440,7 +440,7 @@ main {
 
 .user-show-pane {
   height: 100%;
-  background-color: #f5f6f8
+  background-color: #f5f6f8;
 }
 
 .info-wrapper {
@@ -512,11 +512,17 @@ main {
 .cover-frame {
   box-sizing: border-box;
   height: 307px;
-  img {
-    object-fit: cover;
+  .cover-me {
+    object-fit: cover !important;
     overflow: hidden;
   }
 }
-/* End of home page styling */
 
-
+.fit-small {
+  height: 100px;
+  width: 100px;
+  img {
+    object-fit: contain;
+  }
+}
+/* End of page styling */
