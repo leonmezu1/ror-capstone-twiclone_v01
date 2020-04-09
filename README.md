@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="documentation/images/rails_logo.jpg" alt="Rails Logo">
+  <img src="documentation/images/rails_logo_2.jpg" alt="Rails Logo">
   <br />
   <h3 align="center">Ruby on Rails Capstone Project:</h3>
   <h2 align="center">Chirp it!</h2>
