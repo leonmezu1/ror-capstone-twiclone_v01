@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+# rubocop: disable Metrics/BlockLength
 feature 'Chirp' do
   include Integration
   context 'Liking chirps' do
@@ -31,3 +32,4 @@ feature 'Chirp' do
     end
   end
 end
+# rubocop: enable Metrics/BlockLength

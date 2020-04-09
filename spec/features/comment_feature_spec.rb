@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+# rubocop: disable Metrics/BlockLength
 feature 'Comment' do
   include Integration
   context 'Create comments' do
@@ -35,3 +36,4 @@ feature 'Comment' do
     end
   end
 end
+# rubocop: enable Metrics/BlockLength

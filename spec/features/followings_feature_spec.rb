@@ -1,4 +1,6 @@
 require 'rails_helper'
+
+# rubocop: disable Metrics/BlockLength
 feature 'Following' do
   include Integration
   context 'Find follow and unfollow users' do
@@ -38,3 +40,4 @@ feature 'Following' do
     end
   end
 end
+# rubocop: enable Metrics/BlockLength
