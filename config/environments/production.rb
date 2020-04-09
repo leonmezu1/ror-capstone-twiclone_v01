@@ -3,6 +3,10 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+
+  # Using Cloudinary
+  config.active_storage.service = :cloudinary
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -24,7 +28,7 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
-  # Compress CSS using a preprocessor.
+  # Compress CSS using a preprocessor
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
@@ -39,7 +43,7 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :local
+  config.active_storage.service = :cloudinary
 
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil

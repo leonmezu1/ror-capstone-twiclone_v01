@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: leonmezu
+  api_key: '953792224536175'
+  api_secret: Enwqdqut1KRhqSUN4fHH7PZRD6U
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: leonmezu
+  api_key: '953792224536175'
+  api_secret: Enwqdqut1KRhqSUN4fHH7PZRD6U
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: leonmezu
+  api_key: '953792224536175'
+  api_secret: Enwqdqut1KRhqSUN4fHH7PZRD6U
+  enhance_image_tag: true
+  static_file_support: false
