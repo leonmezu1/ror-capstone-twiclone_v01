@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Useful things inside chirps
 module ChirpsHelper
   def chirp_creator(chirp)

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Devise
 module DeviseHelper
   # Retain this method for backwards compatibility, deprecated in favour of

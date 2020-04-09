@@ -1,9 +1,5 @@
-# frozen_string_literal: true
-
 # User helper
 module UsersHelper
-  # rubocop: disable Metrics/AbcSize
-  # rubocop: disable Metrics/MethodLength
   def gravatar_for(user, size = 80, cls = nil)
     if user.avatar.attached?
       formated = user.avatar.variant(resize: "#{size}x#{size}!")
@@ -47,8 +43,6 @@ module UsersHelper
                 alt: 'cover_image', class: cls.to_s)
     end
   end
-  # rubocop: enable Metrics/AbcSize
-  # rubocop: enable Metrics/MethodLength
 
   def symbol_nick(user)
     '@' + user.username

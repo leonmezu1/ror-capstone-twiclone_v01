@@ -1,9 +1,4 @@
-# frozen_string_literal: true
-
 # Useful
-
-# rubocop: disable Metrics/MethodLength
-# rubocop: disable Metrics/AbcSize
 module DeviseBootstrapViewsHelper
   def bootstrap_devise_error_messages!
     return '' if resource.errors.empty?
@@ -28,5 +23,3 @@ module DeviseBootstrapViewsHelper
     html.html_safe
   end
 end
-# rubocop: enable Metrics/MethodLength
-# rubocop: enable Metrics/AbcSize

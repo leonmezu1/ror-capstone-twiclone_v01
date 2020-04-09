@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Controller
 class UsersController < ApplicationController
   def show

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Useful methods
 module CommentsHelper
   def user_nick(comment)

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Chirps
 class Chirp < ApplicationRecord
   belongs_to :user

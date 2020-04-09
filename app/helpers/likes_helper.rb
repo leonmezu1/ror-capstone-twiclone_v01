@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Like helper
 module LikesHelper
   def like_or_dislike_btn(chirp)

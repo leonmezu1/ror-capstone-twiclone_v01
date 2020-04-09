@@ -1,8 +1,5 @@
-# frozen_string_literal: true
-
 # Following helper
 module FollowingsHelper
-  # rubocop: disable Metrics/MethodLength
   def follow_btn(user, cls = nil)
     return unless current_user != user
 
@@ -18,5 +15,4 @@ module FollowingsHelper
       end
     end
   end
-  # rubocop: enable Metrics/MethodLength
 end

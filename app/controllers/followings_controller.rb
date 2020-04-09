@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # following controller
 class FollowingsController < ApplicationController
   def create
@@ -15,7 +13,6 @@ class FollowingsController < ApplicationController
     end
   end
 
-  # rubocop: disable Metrics/MethodLength
   def destroy
     user_to_follow = User.find(params[:user_id])
     following = Following.find_by(user_id: user_to_follow.id,
@@ -29,5 +26,4 @@ class FollowingsController < ApplicationController
                     alert: 'Oops! something went wrong!')
     end
   end
-  # rubocop: enable Metrics/MethodLength
 end
