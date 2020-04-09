@@ -49,7 +49,6 @@ class User < ApplicationRecord
 
   # return chirps
   def user_timeline
-    Chirp.includes(:user, :comment,
-                   :likes).where(user: [self] + followed_users).most_recents
+    Chirp.includes(:user).where(user: [self] + followed_users).most_recents
   end
 end
