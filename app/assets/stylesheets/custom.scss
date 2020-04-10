@@ -160,16 +160,22 @@ main {
 .login-view {
   background-image: url(login.jpg);
   background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .forget-view {
   background-image: url(forget.jpg);
   background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .left-panel-image {
   background-image: url(left-panel-2.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   background-repeat: no-repeat;
 }
 
