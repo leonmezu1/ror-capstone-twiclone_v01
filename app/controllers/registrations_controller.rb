@@ -16,11 +16,11 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  def after_update_path_for(resource)
-    user_path(resource)
+  def after_update_path_for(current_user)
+    user_path(current_user)
   end
 
-  def after_sign_up_path_for(resource)
-    next_path(resource)
+  def after_sign_up_path_for(_resource)
+    next_path
   end
 end
