@@ -36,17 +36,9 @@
         </div>
       </div>
     </div>
-    <!--<div class="form-group">
-      <%# f.label :current_password %>
-      <%# f.password_field :current_password, autocomplete: 'current-password', class: 'form-control' %>
-      <small class="form-text text-muted"><%= t('.we_need_your_current_password_to_confirm_your_changes') %></small>
-    </div>-->
     <div class="form-group d-flex">
       <%= f.submit 'Upload', class: 'btn btn-sm btn-primary' %>
       <div class="ml-auto btn btn-sm outline-primary login"> <%= link_to t('Skip'), root_path, id: 'skip' %></div>
     </div>
   <% end %>
 </div>
-
-<%= params.inspect %>
-<%= debug(params) %>
