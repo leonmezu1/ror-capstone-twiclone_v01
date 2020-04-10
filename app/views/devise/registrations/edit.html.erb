@@ -33,12 +33,6 @@
         <%= f.text_field :full_name, autofocus: true, autocomplete: "name", class: 'form-control' %>
       </div>
       <div class="form-group col-lg-4">
-        <%= f.label :full_name %><br />
-        <%= f.text_field :full_name, autofocus: true, autocomplete: "name", class: 'form-control' %>
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-lg-4">
         <%= f.label :bio %><br />
         <%= f.text_field :bio, autofocus: true, autocomplete: "name", class: 'form-control' %>
       </div>
@@ -61,7 +55,7 @@
     <div class="form-group">
       <%= f.label :current_password %>
       <%= f.password_field :current_password, autocomplete: 'current-password', class: 'form-control' %>
-      <small class="form-text text-muted"><%= t('.we_need_your_current_password_to_confirm_your_changes') %></small>
+      <small class="form-text text-muted"><%= 'We will need to confirm your password for submiting changes aside avatar or cover' %></small>
     </div>
     <div class="form-group d-flex">
       <%= f.submit t('.update'), class: 'btn btn-sm btn-primary' %>

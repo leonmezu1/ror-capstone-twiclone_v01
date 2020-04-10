@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
   resources :chirps, only: %i[index create destroy]
   get 'static/feature'
-  get 'static/next', as: 'next'
+  get 'static/next'
   get 'static/help', as: 'help'
 
   post 'followings/create', to: 'followings#create', as: 'follow'

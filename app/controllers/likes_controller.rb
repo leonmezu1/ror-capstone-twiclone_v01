@@ -1,7 +1,7 @@
 # Likes controller
 class LikesController < ApplicationController
   def create
-    @like = Like.new(user_id: current_user.id, chirp_id: params[:chirp_id])
+    @like = Like.new(user_id: current_user.id, chirp_id: like_params[:chirp_id])
 
     if @like.save
       redirect_back(fallback_location: root_path,
@@ -14,7 +14,7 @@ class LikesController < ApplicationController
 
   def destroy
     like = Like.find_by(id: params[:id], user: current_user,
-                        chirp_id: params[:chirp_id])
+                        chirp_id: like_params[:chirp_id])
     if like
       like.destroy
       redirect_back(fallback_location: root_path, notice: 'You disliked
@@ -24,5 +24,11 @@ class LikesController < ApplicationController
                     alert: 'You cannot dislike chirp that you did
                             not like before.')
     end
+  end
+
+  private
+
+  def like_params
+    params.permit(:chirp_id)
   end
 end

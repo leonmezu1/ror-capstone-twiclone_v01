@@ -1,7 +1,7 @@
 # following controller
 class FollowingsController < ApplicationController
   def create
-    user_to_follow = User.find(params[:user_id])
+    user_to_follow = User.find(following_params[:user_id])
 
     following = Following.new(user: user_to_follow, follower: current_user)
     if following.save
@@ -14,7 +14,7 @@ class FollowingsController < ApplicationController
   end
 
   def destroy
-    user_to_follow = User.find(params[:user_id])
+    user_to_follow = User.find(following_params[:user_id])
     following = Following.find_by(user_id: user_to_follow.id,
                                   follower_id: current_user.id)
     if following
@@ -25,5 +25,11 @@ class FollowingsController < ApplicationController
       redirect_back(fallback_location: root_path,
                     alert: 'Oops! something went wrong!')
     end
+  end
+
+  private
+
+  def following_params
+    params.permit(:user_id)
   end
 end

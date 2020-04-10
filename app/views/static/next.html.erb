@@ -36,11 +36,11 @@
         </div>
       </div>
     </div>
-    <div class="form-group">
-      <%= f.label :current_password %>
-      <%= f.password_field :current_password, autocomplete: 'current-password', class: 'form-control' %>
+    <!--<div class="form-group">
+      <%# f.label :current_password %>
+      <%# f.password_field :current_password, autocomplete: 'current-password', class: 'form-control' %>
       <small class="form-text text-muted"><%= t('.we_need_your_current_password_to_confirm_your_changes') %></small>
-    </div>
+    </div>-->
     <div class="form-group d-flex">
       <%= f.submit 'Continue', class: 'btn btn-sm btn-primary' %>
       <p class="ml-auto"> <%= link_to t('Skip'), root_path, id: 'skip' %></p>
