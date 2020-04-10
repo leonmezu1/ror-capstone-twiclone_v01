@@ -18,6 +18,7 @@ RSpec.describe 'Users', type: :request do
   end
 end
 feature 'User' do
+  include Integration
   context 'Sign up' do
     before(:each) do
       visit '/users/sign_up'
