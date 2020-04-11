@@ -1,0 +1,60 @@
+<div class="col-2 left-navigation-panel d-flex sticked flex-column">
+  <div class="d-flex user-tile w-100 justify-content-around align-items-center py-4 px-3 overflow-hidden">
+    <div class="avatar mr-1">
+      <%= gravatar_for(current_user, 75) %>
+    </div>
+      <%= render 'layouts/userlinks' %>
+  </div>
+  <div class="d-flex user-tile-conex w-100">
+    <div class="u_followers">
+      <span > <%= current_user.followers.count %> </span>
+      <span class="f_data">Followers</span>
+    </div>
+    <div class="u_followwing_count">
+      <span> <%= current_user.followed_users.count %> </span>
+      <span class="f_data">Following</span>
+    </div>
+  </div>
+  <div class="d-flex flex-column user-links w-100">
+    <%= link_to root_path, class: "user-link" do %>
+      <div class="ic">
+        <i class="icon fas fa-house-user"></i>
+      </div>
+      <div class="link-text">
+        <span>Home</span>
+      </div>
+    <% end %>
+    <%= link_to static_feature_path, class: "user-link" do %>
+      <div class="ic">
+        <i class="icon fab fa-connectdevelop"></i>
+      </div>
+      <div class="link-text">
+        <span>Connect</span>
+      </div>
+    <% end %>
+    <%= link_to static_feature_path, class: "user-link" do %>
+      <div class="ic">
+        <i class="icon fas fa-hashtag"></i>
+      </div>
+      <div class="link-text">
+        <span>Discover</span>
+      </div>
+    <% end %>
+    <%= link_to user_path(current_user), class: "user-link" do %>
+      <div class="ic">
+        <i class="icon fas fa-user"></i>
+      </div>
+      <div class="link-text">
+        <span>Profile</span>
+      </div>
+    <% end %>
+    <%= link_to static_feature_path, class: "user-link" do %>
+      <div class="ic">
+        <i class="icon fas fa-chart-line"></i>
+      </div>
+      <div class="link-text">
+        <span>Statics</span>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="who-to-panel">
+  <div class="banner d-flex py-3 w-100">
+    <span class="banner-text" > who to follow </span>
+    <%= link_to '#' do %>
+      <i class="fas fa-sync"></i>
+    <% end %>
+  </div>
+
+  <div class="follow-list">
+    <% @suggested_users.each do |user| %>
+      <div class="d-flex user-tile w-100 align-items-center py-4">
+        <div class="avatar mx-2">
+          <%= gravatar_circled_for(user, 55) %>
+        </div>
+        <div class="username-links-light d-flex flex-column">
+          <%= username_link user %>
+          <%= fullname_link user %>
+        </div>
+        <div class="ml-auto mr-3"><%= follow_btn user %></div>
+      </div>
+    <% end %>
+  </div>
+</div>

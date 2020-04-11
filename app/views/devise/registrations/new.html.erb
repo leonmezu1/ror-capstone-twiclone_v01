@@ -1,0 +1,43 @@
+<div class="static-wrapper row d-flex">
+<%# <div class="left-panel-image d-none d-md-flex col-md-6 col-lg-7 position relative">
+    <div class="position-absolute catchy">Life is a journey, let's explore together! </div>
+    </div> rename left-panel to right-panel to enable two cards view: col-xs-10 offset-xs-1 col-md-6 col-lg-5 offset-md-0 %>
+  <div class="left-panel-image col-12 d-flex flex-column position relative">
+    <h1 class="static-title py-3 ml-auto mr-2 mt-0"><%= t('.sign_up') %></h1>
+    <div class="row">
+      <div class="col-10 offset-1 col-lg-3 offset-lg-9">
+        <%= form_for resource, as: resource_name, url: registration_path(resource_name), validate: true, html: { class: "floating-f white-bg mx-auto my-auto shadowed-box"} do |f| %>
+          <%= render 'logosvg' %>
+          <div class="form-group">
+            <%= f.text_field :username, autocomplete: 'name', class: 'form-control', placeholder: '@username', id: 'username' %>
+          </div>
+          <div class="form-group">
+            <%= f.text_field :full_name, autocomplete: 'name', class: 'form-control', placeholder: 'Full name', id: 'full_name' %>
+          </div>
+          <div class="form-group">
+            <%= f.email_field :email, autocomplete: 'email', class: 'form-control', placeholder: 'Email', id: 'email' %>
+          </div>
+          <div class="form-group position-relative">
+            <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control', placeholder: 'Password', id: 'password' %>
+            <% if @minimum_password_length %>
+              <small class="form-warning form-text text-muted position-absolute"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
+            <% end %>
+          </div>
+          <div class="form-group">
+            <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control', placeholder: 'password confirmation', id: 'password_confirmation' %>
+          </div>
+          <div class="d-flex justify-content-around">
+            <div class="form-group">
+              <%= f.submit t('.sign_up'), class: "btn outline-primary text-center login mt-2", id: 'sign-up' %>
+            </div>
+            <div>
+              <% provide(:class, "btn outline-primary login mt-2") %>
+              <%= render "devise/shared/links" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="position-absolute catchy d-none d-lg-flex">Life is a journey, let's explore together! </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="static-wrapper forget-view row d-flex">
+  <div class="col-12 d-flex flex-column">
+    <h1 class="static-title py-3 ml-auto mr-2 mt-0 white-text"><%= t('.forgot_your_password') %></h1>
+    <div class="row">
+      <div class="col-10 offset-1 col-lg-4 offset-lg-8">
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "floating-f white-bg mx-auto my-auto shadowed-box"}, validate: true) do |f| %>
+          <div class="form-group">
+            <%= f.label :email %>
+            <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
+          </div>
+          <div class="form-group d-flex">
+            <%= f.submit  'Send me reset instructions', class: "btn outline-primary text-center mr-auto login mt-2" %>
+            <%= link_to  "Sign up", new_user_registration_path, class: "btn outline-primary login mt-2" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
